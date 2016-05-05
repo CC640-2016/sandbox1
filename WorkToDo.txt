@@ -1,0 +1,12 @@
+1.- Crear modelo para almacenar numerito
+2.- Generar migracion para dicho modelo
+3.- Crear vista culia con boton y la wea
+4.- Crear controlador con logica pa que la wea se guarde y se duplique
+5.- Integrar vista y controlador
+
+Modelo De Datos:
+Duplicador
+{
+    Número (Integer)
+    Fecha (TimeStamp)
+}
