@@ -1,4 +1,3 @@
-from django.test import TestCase
 from django.test.client import RequestFactory
 from django.test.testcases import TransactionTestCase
 from django.test import Client
