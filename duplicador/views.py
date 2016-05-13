@@ -16,10 +16,14 @@ class Numero(View):
 
     def post(self,request):
         action = request.POST.get("action")
+        (valor, created) = models.ValorModel.objects.get_or_create(pk=1)
         if action == 'duplicar':
-            (valor, created) = models.ValorModel.objects.get_or_create(pk=1)
             valor.valor=(2*valor.valor)
             valor.save()
+        elif action == 'reset':
+            valor.valor = 1
+            valor.save()
+            
         return HttpResponse()
     
 
