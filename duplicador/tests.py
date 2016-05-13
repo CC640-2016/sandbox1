@@ -39,3 +39,13 @@ class TestDuplicator(TransactionTestCase):
         response2 = self.client.get('/valor')
         n = int(response2.content)
         self.assertEquals(2 ** times, n)
+        
+    def test_duplicate_from_Vista(self):
+        response = self.client.get('/valor')
+        import random
+        times = random.randint(1, 9)
+        for _ in range(times):
+            response = self.client.post('/program', {})
+        response2 = self.client.get('/valor')
+        n = int(response2.content)
+        self.assertEquals(2 ** times, n)
